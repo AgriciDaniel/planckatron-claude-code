@@ -1,0 +1,325 @@
+{
+  "version": "2.1.0",
+  "description": "Universal project type configurations for Planckatron",
+
+  "projectTypes": {
+    "frontend": {
+      "name": "Frontend UI",
+      "description": "React, Next.js, Vue, Svelte - UI components and pages",
+      "detectPatterns": ["package.json with react/vue/svelte", "src/components/**", "src/app/**"],
+      "zones": {
+        "alpha": {
+          "name": "Foundation",
+          "responsibility": "Layout, styling, theme, configuration",
+          "owns": [
+            "src/app/layout.tsx",
+            "src/app/globals.css",
+            "src/styles/**",
+            "tailwind.config.*",
+            "postcss.config.*",
+            "next.config.*"
+          ],
+          "forbidden": ["src/components/**", "src/app/page.tsx", "src/app/**/page.tsx"]
+        },
+        "beta": {
+          "name": "Components",
+          "responsibility": "UI components, data, hooks, utilities",
+          "owns": [
+            "src/components/**",
+            "src/data/**",
+            "src/hooks/**",
+            "src/lib/**",
+            "src/types/**"
+          ],
+          "forbidden": ["src/app/layout.tsx", "src/app/page.tsx"]
+        },
+        "gamma": {
+          "name": "Integration",
+          "responsibility": "Page composition, assembly, final integration",
+          "owns": [
+            "src/app/page.tsx",
+            "src/app/**/page.tsx"
+          ],
+          "forbidden": ["src/app/layout.tsx", "src/components/**"]
+        }
+      }
+    },
+
+    "backend": {
+      "name": "Backend API",
+      "description": "Node.js, Express, Fastify, NestJS - Server-side APIs",
+      "detectPatterns": ["src/routes/**", "src/controllers/**", "src/models/**"],
+      "zones": {
+        "alpha": {
+          "name": "Models & Schema",
+          "responsibility": "Database models, schemas, types, validation",
+          "owns": [
+            "src/models/**",
+            "src/schemas/**",
+            "src/types/**",
+            "prisma/**",
+            "drizzle/**"
+          ],
+          "forbidden": ["src/routes/**", "src/controllers/**", "src/app.ts"]
+        },
+        "beta": {
+          "name": "Services & Logic",
+          "responsibility": "Business logic, services, utilities",
+          "owns": [
+            "src/services/**",
+            "src/utils/**",
+            "src/helpers/**",
+            "src/middleware/**"
+          ],
+          "forbidden": ["src/models/**", "src/routes/**", "src/app.ts"]
+        },
+        "gamma": {
+          "name": "Routes & Controllers",
+          "responsibility": "API endpoints, controllers, route assembly",
+          "owns": [
+            "src/routes/**",
+            "src/controllers/**",
+            "src/app.ts",
+            "src/index.ts"
+          ],
+          "forbidden": ["src/models/**", "src/services/**"]
+        }
+      }
+    },
+
+    "fullstack": {
+      "name": "Full-Stack Application",
+      "description": "Combined frontend and backend in one project",
+      "detectPatterns": ["src/app/**", "src/api/**", "app/api/**"],
+      "zones": {
+        "alpha": {
+          "name": "Backend & API",
+          "responsibility": "API routes, server actions, database",
+          "owns": [
+            "src/api/**",
+            "app/api/**",
+            "src/server/**",
+            "src/db/**",
+            "prisma/**",
+            "src/actions/**"
+          ],
+          "forbidden": ["src/components/**", "src/app/page.tsx", "app/page.tsx"]
+        },
+        "beta": {
+          "name": "Frontend Components",
+          "responsibility": "UI components, hooks, client utilities",
+          "owns": [
+            "src/components/**",
+            "components/**",
+            "src/hooks/**",
+            "src/lib/client/**"
+          ],
+          "forbidden": ["src/api/**", "app/api/**", "src/app/page.tsx"]
+        },
+        "gamma": {
+          "name": "Pages & Integration",
+          "responsibility": "Page composition, layouts, integration",
+          "owns": [
+            "src/app/page.tsx",
+            "src/app/**/page.tsx",
+            "app/page.tsx",
+            "app/**/page.tsx",
+            "src/app/layout.tsx"
+          ],
+          "forbidden": ["src/api/**", "src/components/**"]
+        }
+      }
+    },
+
+    "automation": {
+      "name": "Automation & Scripts",
+      "description": "CLI tools, scripts, pipelines, automation workflows",
+      "detectPatterns": ["scripts/**", "src/cli/**", "bin/**"],
+      "zones": {
+        "alpha": {
+          "name": "Core Scripts",
+          "responsibility": "Main automation scripts, core logic",
+          "owns": [
+            "scripts/**",
+            "src/core/**",
+            "src/commands/**"
+          ],
+          "forbidden": ["src/config/**", "src/cli.ts"]
+        },
+        "beta": {
+          "name": "Utilities & Config",
+          "responsibility": "Helper utilities, configuration, templates",
+          "owns": [
+            "src/utils/**",
+            "src/config/**",
+            "src/templates/**",
+            "config/**"
+          ],
+          "forbidden": ["scripts/**", "src/cli.ts"]
+        },
+        "gamma": {
+          "name": "CLI & Entry",
+          "responsibility": "CLI interface, entry points, pipeline assembly",
+          "owns": [
+            "src/cli.ts",
+            "src/index.ts",
+            "bin/**",
+            "src/pipeline/**"
+          ],
+          "forbidden": ["scripts/**", "src/utils/**"]
+        }
+      }
+    },
+
+    "agentic": {
+      "name": "Agentic Workflows",
+      "description": "AI agents, LLM workflows, autonomous systems",
+      "detectPatterns": ["src/agents/**", "src/prompts/**", "src/tools/**"],
+      "zones": {
+        "alpha": {
+          "name": "Agents & Core",
+          "responsibility": "Agent definitions, core agent logic",
+          "owns": [
+            "src/agents/**",
+            "src/core/**",
+            "src/memory/**"
+          ],
+          "forbidden": ["src/tools/**", "src/orchestrator/**"]
+        },
+        "beta": {
+          "name": "Tools & Prompts",
+          "responsibility": "Agent tools, prompts, utilities",
+          "owns": [
+            "src/tools/**",
+            "src/prompts/**",
+            "src/utils/**",
+            "src/parsers/**"
+          ],
+          "forbidden": ["src/agents/**", "src/orchestrator/**"]
+        },
+        "gamma": {
+          "name": "Orchestration",
+          "responsibility": "Agent orchestration, workflows, entry points",
+          "owns": [
+            "src/orchestrator/**",
+            "src/workflows/**",
+            "src/index.ts",
+            "src/main.ts"
+          ],
+          "forbidden": ["src/agents/**", "src/tools/**"]
+        }
+      }
+    },
+
+    "library": {
+      "name": "Library / Package",
+      "description": "Reusable library, npm package, SDK",
+      "detectPatterns": ["src/index.ts exports", "lib/**", "dist/**"],
+      "zones": {
+        "alpha": {
+          "name": "Core Implementation",
+          "responsibility": "Core library logic, main functionality",
+          "owns": [
+            "src/core/**",
+            "src/lib/**",
+            "lib/**"
+          ],
+          "forbidden": ["src/index.ts", "src/types/**"]
+        },
+        "beta": {
+          "name": "Types & Utilities",
+          "responsibility": "Type definitions, helpers, utilities",
+          "owns": [
+            "src/types/**",
+            "src/utils/**",
+            "src/helpers/**"
+          ],
+          "forbidden": ["src/core/**", "src/index.ts"]
+        },
+        "gamma": {
+          "name": "Exports & API",
+          "responsibility": "Public API, exports, documentation",
+          "owns": [
+            "src/index.ts",
+            "src/exports/**",
+            "README.md"
+          ],
+          "forbidden": ["src/core/**", "src/utils/**"]
+        }
+      }
+    },
+
+    "monorepo": {
+      "name": "Monorepo",
+      "description": "Multi-package repository with shared code",
+      "detectPatterns": ["packages/**", "apps/**", "pnpm-workspace.yaml"],
+      "zones": {
+        "alpha": {
+          "name": "Shared Packages",
+          "responsibility": "Shared libraries, common utilities",
+          "owns": [
+            "packages/shared/**",
+            "packages/common/**",
+            "packages/utils/**"
+          ],
+          "forbidden": ["apps/**", "packages/ui/**"]
+        },
+        "beta": {
+          "name": "UI & Components",
+          "responsibility": "UI package, component library",
+          "owns": [
+            "packages/ui/**",
+            "packages/components/**"
+          ],
+          "forbidden": ["packages/shared/**", "apps/**"]
+        },
+        "gamma": {
+          "name": "Applications",
+          "responsibility": "Application packages, integration",
+          "owns": [
+            "apps/**"
+          ],
+          "forbidden": ["packages/**"]
+        }
+      }
+    },
+
+    "custom": {
+      "name": "Custom Configuration",
+      "description": "User-defined zone configuration",
+      "detectPatterns": [],
+      "zones": {
+        "alpha": {
+          "name": "Track A",
+          "responsibility": "User-defined",
+          "owns": [],
+          "forbidden": []
+        },
+        "beta": {
+          "name": "Track B",
+          "responsibility": "User-defined",
+          "owns": [],
+          "forbidden": []
+        },
+        "gamma": {
+          "name": "Track C",
+          "responsibility": "User-defined",
+          "owns": [],
+          "forbidden": []
+        }
+      }
+    }
+  },
+
+  "defaultType": "frontend",
+
+  "detectionPriority": [
+    "monorepo",
+    "agentic",
+    "fullstack",
+    "backend",
+    "frontend",
+    "automation",
+    "library"
+  ]
+}

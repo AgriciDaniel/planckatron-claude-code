@@ -1,0 +1,31 @@
+{
+  "name": "planckatron",
+  "version": "2.2.0",
+  "description": "Hierarchical Multi-Agent Orchestration System for Claude Code",
+  "author": "Daniel Agrici",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgriciDaniel/planckatron-claude-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AgriciDaniel/planckatron-claude-code/issues"
+  },
+  "homepage": "https://github.com/AgriciDaniel/planckatron-claude-code#readme",
+  "keywords": [
+    "claude-code",
+    "ai-agents",
+    "orchestration",
+    "multi-agent",
+    "planckatron",
+    "anthropic",
+    "claude"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "CLAUDE.md",
+    ".planckatron/"
+  ]
+}
