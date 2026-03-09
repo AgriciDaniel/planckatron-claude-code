@@ -15,13 +15,13 @@
            ╚══════════════════════════╝
 ```
 
-**Hierarchical Multi-Agent Orchestration System (v2.2)**
+**Hierarchical Multi-Agent Orchestration System (v3.0)**
 
 Build ANY project faster with parallel AI agents that never conflict.
 
 ---
 
-## What's New in v2.2
+## What's New in v3.0
 
 ```
 +----------------------+---------------------------------------------+
@@ -68,7 +68,7 @@ When you use Planckatron, you get visual flow diagrams:
 
 ```
 +==============================================================+
-|                    QUANTUM PLAN v2.2                         |
+|                    QUANTUM PLAN v3.0                         |
 +==============================================================+
 |  Request: "Build user authentication"                        |
 |  Type: backend            Stack: Node.js + Express           |
@@ -276,7 +276,7 @@ Agent Failed                     +---------+     +---------+
 ```
 your-project/
 +-- .planckatron/
-|   +-- SKILL.md           # v2.2 skill definition
+|   +-- SKILL.md           # v3.0 skill definition
 |   +-- templates/         # Worker templates
 |
 +-- CLAUDE.md              # Activation trigger
@@ -297,7 +297,7 @@ your-project/
 +----------+-----------------------------+
 | VERSION  |         FEATURES            |
 +----------+-----------------------------+
-| v2.2.0   | Hierarchical + Visual       |
+| v3.0.0   | Hierarchical + Visual       |
 | v2.1.0   | Universal Edition           |
 | v2.0.0   | Frontend Edition            |
 +----------+-----------------------------+
@@ -317,7 +317,7 @@ Created by Daniel Agrici
 
 ```
      "More agents, more speed, zero conflicts."
-              - Planckatron v2.2
+              - Planckatron v3.0
 ```
 
 **GitHub:** https://github.com/AgriciDaniel/planckatron-claude-code

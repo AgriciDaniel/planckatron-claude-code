@@ -1,7 +1,7 @@
 ---
 name: planckatron
 description: "Hierarchical Multi-Agent Orchestration System v3.0. Visual planning, parallel execution, zero conflicts."
-version: "2.2.0"
+version: "3.0.0"
 ---
 
 # Planckatron v3.0 - Hierarchical Multi-Agent Orchestration
